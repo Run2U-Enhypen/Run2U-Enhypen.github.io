@@ -1,0 +1,227 @@
+:root{
+  --color-primario:green;
+  --color-secundario:red;
+  --color-extra:gray;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,body{
+  font-family: Arial, Helvetica, sans-serif;
+  /* line-height espacio entre secciones */
+  line-height: 1.4;
+  color: black;
+}
+a{
+    color: black;
+}
+ul{
+    list-style: none;
+}
+p{
+    margin: 5px 0;
+    line-height: 1.7;
+}
+
+img{
+    /* para que no se pixelee */
+    max-width: 100%;
+}
+
+section a{
+    color: white;
+}
+
+.navbar{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+    /* la a de rgba es la transparencia de 0 a 1 */
+/*     box-shadow: 16px 18px 26px 3px rgba(89, 87, 87, 0.42); */
+}
+
+.navbar_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.navbar ul{
+    align-items: center;
+    display: flex;
+}
+
+.navbar li{
+    margin: 0 15px;
+    font-weight: 700px;
+}
+.navbar a{
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: var(--color-primario);
+}
+
+.navbar_logo img{
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-nav-left{
+    text-transform: uppercase;
+    /*  con flex independientemente si le pones un valor de 1 o un valorde 5, etc...
+    se mueven hacia la izquierda los enlaces "Arte, Coleeciones y Conócenos" */
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* nth-child(2) es porque pusimos un 2 que afecta al 2do hijo o 2do li que encuentra, que en este caso es registrate*/
+.navbar-nav-right li:nth-child(2){
+    margin: 0 5px;
+}
+
+.btn{
+  cursor: pointer;
+  display: inline-block;
+  background: none;
+  border: 1px solid black;
+  border-radius: 50px;
+/* el 1er valor, 7px , determina el relleno tanto hacia arriba como hacia abajo
+  el 2do valor, 16px , determina el relleno a izquierda y derecha
+  el relleno es el espacio en blanco entre el texto y el borde del botón */
+  padding: 7px 16px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-dark-outline{
+  border-color: black;
+  color: black;
+}
+
+.btn-dark{
+  border-color: black;
+  color: white;
+  background-color: black;
+}
+
+/* MODIFICACIÓN DE CAJAS */
+.box{
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* PRIMERA CAJA , no tiene imagen,
+ encabezado h2: Una experiencia totalmente nueva en el arte */
+
+.bg-primary{
+    background-color: #016241;
+    padding: 15px 100px;
+}
+
+.text-center{
+    text-align: center;
+    font-size: 23px;
+}
+
+.box-inner{
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.text-xl{
+  text-transform: uppercase;
+}
+
+/* SEGUNDA CAJA , encabezado h2: Alebrijes mexicanos*/
+
+.bg-secondary{
+    background-color: #d40032;
+}
+
+.box-text{
+    max-width: 500px;
+    text-align: center;
+    justify-self: center;
+    padding: 20px 0;
+    margin: 0 auto;
+}
+
+/* CAJA 2 y 3 */
+
+/* ESTILOS DEL GRID */
+.grid-col-2{
+    display: grid;
+    /* template significa molde */
+    /* repeat(2,1fr) 2 columnas cada elemento ocupa 1 columna,
+     es decir, ocupa 1 fracción */
+    grid-template-columns: repeat(2,1fr);
+    /* espacio entre columnas, calculadora de rem
+    0.625 rem es igual a 10 píxeles
+    2 rem son 32px */
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*  .btn botón Haz tu pedido */
+.box-text , .btn{
+    margin-top: 20px;
+}
+
+.btn-light-outline{
+  border-color: white;
+  color: white;
+}
+
+.btn-light-outline:hover, .btn-dark-outline:hover{
+  background-color: black;
+  color: white;
+}
+
+.grid-reversed :first-child{
+    order: 2;
+}
+
+.divider{
+    width: 95%;
+    height: 1px;
+    background-color: grey;
+    margin: 40px auto;
+}
+
+/* MODIFICANDO AL FOOTER */
+.footer-container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 30px 20px;
+}
+
+.social{
+    /* display flex para que los elementos dejen de mostrarse en bloque (con saltos de línea)
+    para pasara acomodarse en línea, uno seguido de otro, acomodarse horizontalmente
+    si ya tenías iconos, debido al pequeño tamaño ya se veían horizontalmente ~ */
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.social svg{
+    width: 35px;
+    height: 35px;
+}
+
+.social a{
+    text-decoration: none;
+    margin-right: 20px;
+}
